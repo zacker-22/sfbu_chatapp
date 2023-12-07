@@ -1,0 +1,76 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <title>Customer Support</title>
+</head>
+<script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+
+<nav class="navbar navbar-toggleable-xl navbar-inverse bg-inverse">
+    <a class="navbar-brand" href="#">ChatGpt Customer Support</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+<br><br><br>
+
+
+
+<form action="/" method="GET">
+    <div class="form-group">
+        <div class="row align-items-center">
+            <div class="col"></div>
+            <div class="col align-items-center">
+                <label align="left">Ask any questions about Open AI website.</label>
+                <textarea class="form-control" name="query" id="sqlt" cols="30" rows="7"></textarea>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row align-items-center">
+            <div class="col"></div>
+            <div class="col align-items-center">
+                <div class="row align-items-center">
+                    <div class="col align-items-center">
+                        <button class="btn btn-outline-success btn-block" onclick="">Ask</button>
+                    </div>
+                    <div class="col align-items-center">
+                        <button class="btn btn-outline-danger btn-block" type="reset">Clear</button>
+                    </div>
+                   
+                    
+
+                </div>
+                {% if query: %}
+                    <br><br>
+                    <table class="table">
+                        <thead class="thead-default">
+                        <tr>
+                            <th>{{result}}</th>
+                            
+                        </tr>
+                    </table>
+                    {% endif %}
+            </div>
+            
+            <div class="col"></div>
+        </div>
+    </div>
+</form>
+
+<script>
+    document.getElementById("sqlt").setAttribute("placeholder", "{{query}}");
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
